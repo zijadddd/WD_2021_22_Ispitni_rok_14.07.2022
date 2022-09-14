@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .spoljni {
+        width: 100%;
+        display: flex;
+
+        /*redoslijed*/
+        /*flex-direction: column-reverse; */
+        /*flex-direction: column;*/
+        flex-direction: row;
+        /*flex-direction: row-reverse;*/
+
+        /*ponasanje unutrasnjih*/
+        /* flex-wrap: wrap;*/ /*u ovom slucaju izbacite width u procentima iz unutrasnjih elementa*/
+        flex-wrap: nowrap;
+
+        /*justify*/
+        /*justify-content: center;
+    justify-content: flex-start;
+      justify-content: flex-end;
+      justify-content: space-around;*/
+        justify-content: space-between;
+
+        background-color: lightblue;
+      }
+
+      .spoljni > .unutrasnji {
+        background-color: lightcyan;
+        width: 20%;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="podaci()">Primi</button>
+
+    <div class="spoljni" id="spoljni">
+      <div class="unutrasnji">
+        <h4>1. Unutrasnji</h4>
+      </div>
+      <div class="unutrasnji">
+        <h4>2. Unutrasnji</h4>
+      </div>
+      <div class="unutrasnji">
+        <h4>3. Unutrasnji</h4>
+      </div>
+      <div class="unutrasnji">
+        <h4>4. Unutrasnji</h4>
+      </div>
+    </div>
+
+    <div class="narudzba">
+      <label for="ime">Ime</label>
+      <input type="text" name="ime" id="ime" />
+      <br />
+      <label for="prezime">Prezime</label>
+      <input type="text" name="prezime" id="prezime" />
+      <br />
+      <label for="adresa">Adresa</label>
+      <input type="text" name="adresa" id="adresa" />
+      <br />
+      <label for="id">ID osobe za kontakt</label>
+      <input type="text" name="id" id="id" readonly />
+      <br />
+      <label for="poruka">Poruka</label>
+      <textarea name="poruka" id="poruka" rows="4" cols="50"></textarea>
+      <br />
+      <label for="email">kontakt e-mail</label>
+      <input type="text" name="email" id="email" />
+      <br />
+      <button onclick="posaljiPoruku()">Posalji poruku</button>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
